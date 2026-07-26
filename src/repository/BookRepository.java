@@ -111,7 +111,7 @@ public class BookRepository {
 
         File file = new File(FILE_PATH);
 
-        if (!file.exists()) {
+        if (!file.exists() || file.length() == 0) {
             return new ArrayList<>();
         }
 
