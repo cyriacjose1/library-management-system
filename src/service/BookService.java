@@ -9,8 +9,8 @@ public class BookService {
 
     private BookRepository bookRepository;
 
-    public BookService() {
-        bookRepository = new BookRepository();
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     public void addBook(String isbn, String title, String author, String genre) {

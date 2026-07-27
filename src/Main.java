@@ -4,14 +4,23 @@ import service.UserService;
 
 import java.util.Scanner;
 
+import repository.BookRepository;
+import repository.TransactionRepository;
+import repository.UserRepository;
+
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    private static final BookService bookService = new BookService();
-    private static final UserService userService = new UserService();
-    private static final TransactionService transactionService = new TransactionService();
+    private static final BookRepository bookRepository =new BookRepository();
+    private static final UserRepository userRepository =new UserRepository();
+    private static final TransactionRepository transactionRepository =new TransactionRepository();
 
+    private static final BookService bookService =new BookService(bookRepository);
+
+    private static final UserService userService =new UserService(userRepository);
+
+    private static final TransactionService transactionService =new TransactionService(transactionRepository, bookRepository, userRepository);
     public static void main(String[] args) {
 
         int choice;

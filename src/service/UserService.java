@@ -9,8 +9,8 @@ public class UserService {
 
     private UserRepository userRepository;
 
-    public UserService() {
-        userRepository = new UserRepository();
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public void registerUser(String userId, String name, String contactInfo) {

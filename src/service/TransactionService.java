@@ -17,10 +17,10 @@ public class TransactionService {
     private BookRepository bookRepository;
     private UserRepository userRepository;
 
-    public TransactionService() {
-        transactionRepository = new TransactionRepository();
-        bookRepository = new BookRepository();
-        userRepository = new UserRepository();
+    public TransactionService(TransactionRepository transactionRepository, BookRepository bookRepository, UserRepository userRepository) {
+        this.transactionRepository = transactionRepository;
+        this.bookRepository = bookRepository;
+        this.userRepository = userRepository;
     }
 
     public void borrowBook(String userId, String isbn) {
